@@ -1,0 +1,143 @@
+{
+  "_version": "1.49.0",
+  "sap.app": {
+    "id": "gfex",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.11.1",
+      "toolsId": "733d0081-a354-4c00-ae77-28aef34904c2"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/v2/northwind/northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.129.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "gfex.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+				"type": "View",
+				"viewType": "XML",
+				"path": "gfex.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": ["notFound"]
+				},
+				"async": true
+      },
+      "routes": [
+        {
+          "name": "worklist",
+          "pattern": ":?query:",
+          "target": [
+            "worklist"
+          ]
+        },
+        {
+					"pattern": "Products/{objectId}",
+					"name": "object",
+					"target": ["object"]
+				}
+      ],
+      "targets": {
+        "worklist": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "main",
+          "viewName": "main"
+        },
+          "object": {
+            "name": "Object",
+            "id": "object",
+            "level": 2,
+            "title": "{i18n>objectViewTitle}"
+          },
+          "objectNotFound": {
+            "name": "ObjectNotFound",
+            "id": "objectNotFound"
+          },
+          "notFound": {
+            "name": "NotFound",
+            "id": "notFound"
+          }
+      }
+    },
+    "rootView": {
+      "viewName": "gfex.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}
