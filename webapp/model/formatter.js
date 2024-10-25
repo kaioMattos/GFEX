@@ -21,6 +21,16 @@ sap.ui.define([
 			return parseFloat(sValue).toFixed(2);
 		},
 
+		statusText: function(sStatus) {
+			
+			switch (sStatus) {
+				case "S":
+					return 'sap-icon://accept';
+				default:
+					return 'sap-icon://cancel';
+			}
+		},
+
 		/**
 		 * Defines a value state based on the stock level
 		 *

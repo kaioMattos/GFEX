@@ -13,7 +13,7 @@
 		busy="{objectView>/busy}"
 		busyIndicatorDelay="{objectView>/delay}">
 		<semantic:titleHeading>
-			<Title text="{ProductName}" />
+			<Title text="{materialSet>/matnr}" />
 		</semantic:titleHeading>
 		<semantic:headerContent>
 			<FlexBox
@@ -22,9 +22,7 @@
 				<Panel backgroundDesign="Transparent">
 					<ObjectAttribute
 						title="{i18n>ObjectProductIdText}"
-						text="{
-							path: 'ProductID',
-							formatter: '.formatter.numberUnit'}"/>
+						text="aaaa"/>
 					<ObjectAttribute
 						title="{i18n>ObjectPriceTitle}"
 						text="{

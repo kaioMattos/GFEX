@@ -8,7 +8,7 @@
 		id="page"
 		headerPinnable="false"
 		toggleHeaderOnTitleClick="false"
-		showFooter="false">
+		showFooter="true">
 
 		<semantic:titleHeading>
 			<Title text="{i18n>worklistTitle}" />
@@ -56,7 +56,7 @@
 						width="auto"
 						mode="MultiSelect"
 						items="{
-							path: '/Products',
+							path: 'materialSet>/',
 							sorter: {
 								path: 'ProductName',
 								descending: false
@@ -84,31 +84,29 @@
 							<Column id="nameColumn">
 								<Text
 									id="nameColumnTitle"
-									text="{i18n>TableNameColumnTitle}"/>
+									text="{i18n>MaterialSetColumnMatnr}"/>
 							</Column>
 							<Column
-								id="supplierNameColumn"
+								id="materialSetColumnMfrpn"
 								demandPopin="false"
 								minScreenWidth="Tablet">
-								<Text text="{i18n>TableSupplierColumnTitle}"/>
+								<Text text="{i18n>MaterialSetColumnMfrpn}"/>
 							</Column>
 							<Column
-								id="unitPriceColumn"
-								hAlign="End"
-								demandPopin="true"
+								id="materialSetColumnLvorm"
+								demandPopin="false"
 								minScreenWidth="Tablet">
-								<Text text="{i18n>TablePriceColumnTitle}"/>
+								<Text text="{i18n>MaterialSetColumnLvorm}"/>
 							</Column>
-							<Column id="unitsOnOrderColumn"
-								demandPopin="true"
-								minScreenWidth="Tablet"
-								hAlign="End">
-								<Text text="{i18n>TableUnitsOrderedColumnTitle}"/>
+							<Column id="materialSetColumnDbcnt"
+								demandPopin="false"
+								minScreenWidth="Tablet">
+								<Text text="{i18n>MaterialSetColumnDbcnt}"/>
 							</Column>
 							<Column
-								id="unitsInStockColumn"
+								id="materialSetColumnInex_conf"
 								hAlign="End">
-								<Text text="{i18n>TableUnitsInStockColumnTitle}"/>
+								<Text text="{i18n>MaterialSetColumnInex_conf}"/>
 							</Column>
 						</columns>
 					<items>
@@ -117,26 +115,19 @@
 							press=".onPress">
 							<cells>
 								<ObjectIdentifier
-									title="{ProductName}"/>
-								<Text text = "{Supplier/CompanyName}"/>
-								<ObjectNumber
-									unit="EUR"
-									number="{
-										path: 'UnitPrice',
-										formatter: '.formatter.numberUnit'}"/>
-								<ObjectNumber
-									number="{
-										path: 'UnitsOnOrder',
-										formatter: '.formatter.numberUnit'}"
-										unit="PC"/>
-								<ObjectNumber
-									number="{
-										path: 'UnitsInStock',
-										formatter: '.formatter.numberUnit'}"
-									unit="PC"
-									state="{
-										path: 'UnitsInStock',
-										formatter: '.formatter.quantityState'}"/>
+                        title="{materialSet>matnr}"
+                        text="{materialSet>maktx}"
+                    />
+                    <ObjectIdentifier
+                        title="{materialSet>mfrpn}"
+                        text="{materialSet>mfrnr}"
+                    />
+                    <Text text="{materialSet>lvorm}" />
+                    <Text text="{materialSet>dbcnt}" />
+                    <ObjectStatus text="" icon="{
+                                             path: 'materialSet>inex_conf',
+						                     formatter: '.formatter.statusText' 
+                                           }"/>
 								</cells>
 							</ColumnListItem>
 						</items>
@@ -147,10 +138,10 @@
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
 		</semantic:sendEmailAction>
-		<!-- <semantic:positiveAction>
-			<semantic:PositiveAction text="{i18n>TableProductsReorder}" press=".onUpdateStockObjects"/>
+		 <semantic:positiveAction>
+			<semantic:PositiveAction text="Adicionar no carrinho" press=".onUpdateStockObjects"/>
 		</semantic:positiveAction>
-		<semantic:negativeAction>
+		<!--<semantic:negativeAction>
 			<semantic:NegativeAction text="{i18n>TablePorductsUnlist}" press=".onUnlistObjects"/>
 		</semantic:negativeAction> -->
 	</semantic:SemanticPage>

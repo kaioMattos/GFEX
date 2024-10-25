@@ -21,7 +21,7 @@ sap.ui.define([
 		 * Called when the worklist controller is instantiated.
 		 * @public
 		 */
-		onInit : function () {
+		onInit : async function () {
 			var oViewModel,
 				iOriginalBusyDelay,
 				oTable = this.byId("table");
@@ -63,6 +63,12 @@ sap.ui.define([
 				// Restore original busy indicator delay for worklist's table
 				oViewModel.setProperty("/tableBusyDelay", iOriginalBusyDelay);
 			});
+
+			var oMydata = new sap.ui.model.json.JSONModel(); 
+			await oMydata.loadData("../localService/MaterialSet.json"); 
+			console.log(JSON.stringify(oMydata.getData()));
+			this.getView().setModel(oMydata, "materialSet");
+
 		},
 
 		/* =========================================================== */
@@ -182,7 +188,7 @@ sap.ui.define([
 		 */
 		_showObject : function (oItem) {
 			this.getRouter().navTo("object", {
-				objectId: oItem.getBindingContext().getProperty("ProductID")
+				objectId: oItem.getBindingContext('materialSet').getProperty('matnr')
 			});
 		},
 

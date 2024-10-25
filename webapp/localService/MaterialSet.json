@@ -1,0 +1,74 @@
+[
+    {
+      "matnr": "10.000.030",
+      "maktx": "Tubo AC A106-C s/c ASTM A106 1/8\"-XS",
+      "mfrnr": "10.000.030",
+      "mfrpn": "HALLIBURTO",
+      "class": 40142101,
+      "Grupo de mercadorias": 40142101,
+      "lvorm": "NÃO",
+      "dbcnt": 0,
+      "Fornecedor INEX": "",
+      "inex_conf": ""
+    },
+    {
+      "matnr": "10.000.604",
+      "maktx": "Tubo AC 5L-B PSL-2 c/c ASTM A106 1/8\"-XS",
+      "mfrnr": "NÃO USAR",
+      "mfrpn": "ALSTONBR",
+      "class": 39131706,
+      "Grupo de mercadorias": 39131706,
+      "lvorm": "NÃO",
+      "dbcnt": 2,
+      "Fornecedor INEX": "",
+      "inex_conf": ""
+    },
+    {
+      "matnr": "10.073.111",
+      "maktx": "Espoleta elét sismógrafica cl I",
+      "mfrnr": "",
+      "mfrpn": "",
+      "class": 12131704,
+      "Grupo de mercadorias": 12131704,
+      "lvorm": "NÃO",
+      "dbcnt": 0,
+      "Fornecedor INEX": 10097492,
+      "inex_conf": "SIM"
+    },
+    {
+      "matnr": "10.000.273",
+      "maktx": "Tubo AC A333-6 s/c 3\"-STD",
+      "mfrnr": "",
+      "mfrpn": "",
+      "class": 40142101,
+      "Grupo de mercadorias": 40142101,
+      "lvorm": "NÃO",
+      "dbcnt": 0,
+      "Fornecedor INEX": "",
+      "inex_conf": ""
+    },
+    {
+      "matnr": "10.000.602",
+      "maktx": "Tubo AC 5L-B PSL-1 c/c ERW ASTM A134 16",
+      "mfrnr": "PCF123995",
+      "mfrpn": "CALIBRATED",
+      "class": 40142101,
+      "Grupo de mercadorias": 40142101,
+      "lvorm": "NÃO",
+      "dbcnt": 0,
+      "Fornecedor INEX": 10006326,
+      "inex_conf": "SIM"
+    },
+    {
+      "matnr": "10.094.398",
+      "maktx": "Tubo AC 5L 60E s/c 4\"-XS",
+      "mfrnr": "",
+      "mfrpn": "",
+      "class": 40142101,
+      "Grupo de mercadorias": 40142101,
+      "lvorm": "NÃO",
+      "dbcnt": 0,
+      "Fornecedor INEX": "",
+      "inex_conf": ""
+    }
+  ]
